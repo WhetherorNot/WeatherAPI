@@ -34,8 +34,20 @@
         // var pressure = data.main.pressure;
 
         day.forEach(function(day){
-            var degree = day.main.temp_max + "ºF" + "/" + day.main.temp_min + "ºF";
-            $("#day1").append(degree);
+
+            var url= "http://openweathermap.org/img/w/"+day.weather[0].icon+".png";
+            var img="<img src='"+url+"'>";
+            var degree =
+                "<div class='day'>"
+                +"<ul>"
+                +"<li>" + day.main.temp_max + "ºF" + "/" + day.main.temp_min + "ºF" +"</li>"
+                +"<li>"+img +"</li>"
+                +"<li>"+"<strong>Clouds:</strong>"+ day.weather[0].description+"</li>"
+                +"<li>"+"<strong>Humidity:</strong>"+day.main.humidity +"</li>"
+                +"</ul>"+
+                "</div>";
+            $('body').append(degree);
+
         });
 
     }
