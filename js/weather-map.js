@@ -44,6 +44,8 @@
                 +"<li>"+img +"</li>"
                 +"<li>"+"<strong>Clouds:</strong>"+ day.weather[0].description+"</li>"
                 +"<li>"+"<strong>Humidity:</strong>"+day.main.humidity +"</li>"
+                +"<li>"+"<strong>Wind:</strong>"+day.wind.speed +"</li>"
+                +"<li>"+"<strong>Pressure:</strong>"+day.main.pressure +"</li>"
                 +"</ul>"+
                 "</div>";
             $('body').append(degree);
