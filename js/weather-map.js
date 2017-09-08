@@ -1,6 +1,14 @@
 (function () {
     "use strict";
 
+    var place = {
+        lat: 29.423017,
+        lon: -98.48527
+    };
+    var mapPlace = {
+        lat: 29.423017,
+        lng: -98.48527
+    };
 
     function start(lat, lon) {
         var request = $.ajax({
@@ -17,7 +25,7 @@
         request.done(success);
         request.fail(failure);
     }
-    start(29.423017,-98.48527);
+    start(place.lat, place.lon);
 
 
     function success(data, status, jqXhr) {
@@ -68,4 +76,11 @@
         start(lat,lon)
 
     });
+    var mapOptions = {
+        zoom:19,
+        center: mapPlace
+    };
+    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+
 })();

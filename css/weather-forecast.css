@@ -19,3 +19,7 @@ body {
 #mainHead{
     text-align: center;
 }
+#map-canvas {
+    width: auto;
+    height: 481px;
+}
