@@ -6,7 +6,7 @@
         lon: -98.48527
     };
 
-
+                        //taking the ajax request//
     function start(lat, lon) {
         var request = $.ajax({
             url: "http://api.openweathermap.org/data/2.5/forecast",
@@ -22,11 +22,11 @@
         request.done(success);
         request.fail(failure);
     }
-
+                            //success function run//
     start(place.lat, place.lon);
     googleAPI(place.lat, place.lon);
 
-
+                //executing commands based on ajax success//
     function success(data, status, jqXhr) {
         // console.log(data);
         $('#info-dump').html("");
@@ -39,11 +39,11 @@
     }
 
     function weatherInfo(day, data) {
+                    //gets the name from the ajax data//
         var location = data.city.name;
-        $('#city').append(location);
-
+        $('#city').append(location)
         day.forEach(function (day) {
-
+        //builds html data and appends to the page//
             var url = "http://openweathermap.org/img/w/" + day.weather[0].icon + ".png";
             var img = "<img src='" + url + "'>";
 
@@ -65,7 +65,7 @@
         });
 
     }
-
+//on click function//
     $('button').click(function () {
         var lat = Number($('#latitude').val());
         var lon = Number($('#longitude').val() * -1);
@@ -77,7 +77,7 @@
 
     });
 
-
+//google map api//
     function googleAPI(lat, lng) {
         var mapPlace={
             lat:lat,
