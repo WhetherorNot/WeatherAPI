@@ -21,7 +21,7 @@
 
 
     function success(data, status, jqXhr) {
-        console.log(data);
+        // console.log(data);
         $('#info-dump').html("");
         $('#city').html('');
         weatherInfo(data.list,data);
@@ -63,7 +63,7 @@
 
     $('button').click(function () {
         var lat=$('#latitude').val();
-        var lon=$('#longitude').val();
+        var lon=$('#longitude').val()*-1;
 
         start(lat,lon)
 
